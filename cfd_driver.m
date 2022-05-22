@@ -140,4 +140,7 @@ clear Be1 Be2 Ce1 Ce2 JBP JMP JXYP
 clear Fe1 Fe2 P_element P_side P_value
 clear i i_JBP ie l_cos_theta_x m_cos_theta_y r s
 x = K\B;
+ux_k_1 = x(1:Nz);
+vy_k_1 = x(1 + Nz: 2 * Nz);
+p4 = x(1 + 2 * Nz: 2 * Nz + Nd);
 %%%%%% 清理内存，求解方程
