@@ -133,22 +133,13 @@ for i = 1:length(JBV(:,1))   % 遍历所有压强边界单元
 end
 %%%%%% (强制)速度边界条件实现
 
-%%%%%% 清理内存，求解方程
+%%%%%% 清理内存, 存储线性矩阵
 clear D11 D12 D21 D22 C1 C2 B1 B2
 clear F1 F2 De11 De12 De21 De22 JXYe
 clear Be1 Be2 Ce1 Ce2 JBP JMP JXYP
 clear Fe1 Fe2 P_element P_side P_value
 clear i i_JBP ie l_cos_theta_x m_cos_theta_y r s
-x = K\B;
-ux_k_1 = x(1:Nz);
-vy_k_1 = x(1 + Nz: 2 * Nz);
-p4 = x(1 + 2 * Nz: 2 * Nz + Nd);
-p_k_1= [Pding2Pzong(p4, JMV)]';   % 压力插值计算
-%%%%%% 清理内存，求解方程
+save matrix
+%%%%%% 清理内存, 存储线性矩阵
 
-%%%%%% 输出Tecplot后处理结果
-E = E * 4;
-Nz = Nz;
-data = [JXYV, ux_k_1, vy_k_1, sqrt(ux_k_1.^2 + vy_k_1.^2), p_k_1];
-JMV4 = JMV_9to4(JMV);    % 二次九结点单元拆分为四个线性单元, 并建立IEN
-%%%%%% 输出Tecplot后处理结果
+
