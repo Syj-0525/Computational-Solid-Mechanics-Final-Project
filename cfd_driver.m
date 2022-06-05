@@ -117,7 +117,7 @@ for i = 1:length(JBP(:,1))   % 遍历所有压强边界单元
     for ie = 1:9
         JXYe(ie,:) = JXYV(JMV(JBP(i, 1), ie), :);   % 第i个压强边界单元的速度结点坐标数据
     end
-    [Fe1, Fe2] = My_function_of_Fe(JXYe, JBP(i, :));   % 调用My_function_of_Fe
+    [Fe1, Fe2] = function_of_Fe2(JXYe, JBP(i, :));   % 调用My_function_of_Fe
 
     %%%%%% 装配F1, F2
     for m = 1:9
