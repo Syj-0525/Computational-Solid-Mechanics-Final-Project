@@ -55,10 +55,10 @@ for i = 1:6
         det_Jacobi = det(Jacobi);
         %%%%%% Jacobi相关计算
 
-        %%%%%% Be1和Be2单元块矩阵计算
+        %%%%%% Be1和Be2单元子块矩阵计算
         Be1 = Be1 + gw(i) * gw(j)  * Fyp * fy_x' * det_Jacobi;
         Be2 = Be2 + gw(i) * gw(j)  * Fyp * fy_y' * det_Jacobi;
-        %%%%%% Be1和Be2单元块矩阵计算
+        %%%%%% Be1和Be2单元子块矩阵计算
     end
 end
 %%%%%%% Be1和Be2的数值积分
